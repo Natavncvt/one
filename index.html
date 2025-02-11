@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndiHome - Internet Super Cepat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .scroll-container { overflow-x: auto; scroll-snap-type: x mandatory; display: flex; gap: 16px; padding-bottom: 8px; }
+        .scroll-item { flex: 0 0 100%; scroll-snap-align: start; }
+        div:has(> button:nth-child(3)) { justify-content: flex-start; }
+        div:has(> button:nth-child(3)):not(:has(> button:nth-child(4))) { justify-content: center; }
+        .kategoriContent { width: 260px; flex-shrink: 0; border-radius: 12px; overflow: hidden; scroll-snap-align: start; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
+        .kategoriContent .top-section { background: linear-gradient(135deg, #C81E1E, #9B1111); color: white; padding: 20px; text-align: center; position: relative; border-bottom: 4px solid #ffffff80; }
+        .kategoriContent .bottom-section { background-color: white; padding: 20px; text-align: left; position: relative; }
+        .separator { height: 3px; background: linear-gradient(to right, transparent, #9B1111, transparent); margin: 12px 0; }
+        .deskripsi-item { display: flex; align-items: center; gap: 8px; margin-top: 6px; }
+        .deskripsi-item i { font-size: 14px; color: #C81E1E; }
+        .deskripsi-item span { font-size: 14px; color: #4A4A4A; }
+        .buy-button { display: block; margin-top: 16px; width: 100%; max-width: 220px; margin-left: auto; margin-right: auto; }
+        .overlay-container { position: relative; display: inline-block; padding: 0.2rem 0.4rem; border-radius: 18px; }
+        .overlay { position: absolute; top: 50%; left: 50%; width: 110%; height: 80%; background: #ffffff; border-radius: 20px; transform: translate(-50%, -50%); z-index: 0; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <header class="bg-gradient-to-r from-red-600 to-red-800 text-white py-4 shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-6xl mx-auto flex justify-between items-center px-4">
+            <h1 class="text-xl font-bold flex items-center gap-2">
+              <img src="https://files.catbox.moe/unpgrx.png" alt="IndiHome" class="h-9 filter invert brightness-0">
+            </h1>
+            <nav class="flex gap-4 text-sm">
+                <a href="#" id="menuPaket" class="font-semibold text-base hover:text-gray-300 transition-all duration-300 flex items-center gap-2"><i class="fas fa-box"></i> Paket</a>
+                <a href="https://wa.me/6285815812015" class="font-semibold text-base hover:text-gray-300 transition-all duration-200 flex items-center gap-2"><i class="fas fa-phone"></i> Kontak</a>
+            </nav>
+        </div>
+    </header>
+    <section class="max-w-6xl mx-auto mt-20 px-6">
+        <div class="relative bg-white shadow-lg rounded-xl overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-red-600 to-red-800 opacity-90"></div>
+            <div class="relative z-10 text-center text-white py-10 px-6 md:py-16 md:px-8">
+                <img src="https://files.catbox.moe/unpgrx.png" alt="Logo" class="mx-auto filter invert brightness-0 drop-shadow-lg mb-5 md:mb-6" style="height:5.5rem;">
+                <h2 class="text-2xl md:text-3xl font-bold tracking-wide">Internet Ultra Cepat & Stabil</h2>
+                <p class="mt-3 text-sm md:text-lg font-light opacity-90 max-w-lg mx-auto">
+                Nikmati koneksi premium untuk streaming, gaming, dan bisnis tanpa gangguan.
+                </p>
+                <div class="mt-5 flex flex-wrap items-center justify-center gap-3 text-xs md:text-sm">
+                    <span class="bg-white/20 px-3 py-1 rounded-full">Kecepatan hingga 1 Gbps</span>
+                    <span class="bg-white/20 px-3 py-1 rounded-full">SLA 99.9% uptime</span>
+                </div>
+                <button id="lihatPaket" class="mt-6 md:mt-8 bg-white text-red-600 px-5 py-2.5 md:px-7 md:py-3 rounded-full text-sm md:text-lg font-semibold hover:bg-gray-200 transition-all duration-300 flex items-center justify-center mx-auto gap-2 shadow-md hover:shadow-lg">
+                    <i class="fas fa-globe"></i> Lihat Paket
+                </button>
+            </div>
+        </div>
+    </section>
+    <section class="max-w-6xl mx-auto mt-8 px-4">
+        <h2 class="text-xl font-bold text-center">Keunggulan Kami</h2>
+       <div class="grid md:grid-cols-3 gap-6 mt-6">
+            <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center transition-all duration-300 ease-in-out hover:bg-red-600 group">
+                <i class="fas fa-tachometer-alt text-red-600 text-4xl transition-all duration-300 ease-in-out group-hover:text-white"></i>
+                <h3 class="text-lg font-semibold mt-3 transition-all duration-300 ease-in-out group-hover:text-white">Kecepatan Maksimal</h3>
+                <p class="mt-2 text-gray-600 text-sm transition-all duration-300 ease-in-out group-hover:text-white">Internet ultra cepat untuk kebutuhan apa pun.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center transition-all duration-300 ease-in-out hover:bg-red-600 group">
+                <i class="fas fa-shield text-red-600 text-4xl transition-all duration-300 ease-in-out group-hover:text-white"></i>
+                <h3 class="text-lg font-semibold mt-3 transition-all duration-300 ease-in-out group-hover:text-white">Keamanan Tinggi</h3>
+                <p class="mt-2 text-gray-600 text-sm transition-all duration-300 ease-in-out group-hover:text-white">Proteksi terbaik untuk data dan privasi Anda.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center transition-all duration-300 ease-in-out hover:bg-red-600 group">
+                <i class="fas fa-headset text-red-600 text-4xl transition-all duration-300 ease-in-out group-hover:text-white"></i>
+                <h3 class="text-lg font-semibold mt-3 transition-all duration-300 ease-in-out group-hover:text-white">Dukungan 24/7</h3>
+                <p class="mt-2 text-gray-600 text-sm transition-all duration-300 ease-in-out group-hover:text-white">Layanan pelanggan selalu siap membantu.</p>
+            </div>
+        </div>
+    </section>
+    <section id="pilihPaket" class="max-w-6xl mx-auto mt-12 px-4">
+        <h2 class="text-xl font-bold text-center">Pilih Paket Anda</h2>
+        <div class="kategoriContainer flex gap-4 mt-6 overflow-x-auto whitespace-nowrap px-4 w-full flex-nowrap items-center justify-center md:justify-start"></div>
+        <div class="scroll-container mt-6"></div>
+    </section>
+    <div id="infoPopup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white rounded-lg shadow-2xl w-full max-w-lg relative transform scale-95 transition-all duration-300 overflow-hidden">
+            <div class="bg-gradient-to-r from-red-600 to-red-500 text-white py-8 px-6 rounded-t-lg relative">
+                <h3 id="popupTitle" class="text-2xl font-extrabold text-center tracking-wide uppercase drop-shadow-md"></h3>
+                <div class="mt-4 flex flex-col items-center justify-center">
+                    <span class="text-lg font-medium uppercase opacity-80 tracking-widest">Kecepatan hingga</span>
+                    <p id="popupMbps" class="text-3xl font-black mt-1 drop-shadow-lg"></p>
+                </div>
+                <div class="mt-6 flex items-center justify-center bg-white/20 p-3 rounded-lg shadow-lg">
+                    <span class="text-base font-semibold uppercase opacity-90">Harga</span>
+                    <p id="popupPrice" class="text-2xl font-extrabold ml-3 drop-shadow-xl"></p>
+                </div>
+            </div>
+            <div class="p-6 text-center">
+                <div id="popupDescription" class="text-gray-700 text-sm bg-gray-100 p-4 rounded-lg shadow-inner"></div>
+                <h4 class="text-xl font-bold text-gray-800 mt-6 border-b-2 border-gray-300 pb-2">Deskripsi</h4>
+                <div id="popupDetails" class="mt-4 text-gray-600 text-sm"></div>
+            </div>
+            <button id="closePopup" class="absolute top-3 right-3 text-white w-12 h-12 flex items-center justify-center text-5xl hover:text-gray-300 transition-all">&times;</button>
+        </div>
+    </div>
+    <footer class="bg-red-700 text-white py-8 mt-8">
+        <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-6 text-center md:text-left">
+            <div>
+                <h3 class="text-lg font-semibold text-center">
+                   Tentang <span class="mr-1"></span>
+                   <img src="https://files.catbox.moe/cuw1kd.png" alt="IndiHome" class="h-4 inline-block align-middle filter invert brightness-0" style="transform: translateY(-2px);">
+                </h3>
+                <p class="mt-2 text-sm text-gray-200">Penyedia layanan internet cepat dan stabil dengan harga terbaik.</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold">Hubungi Kami</h3>
+                <p class="mt-2 text-sm"><i class="fas fa-phone"></i> +62 858-1581-2015</p>
+            </div>
+        </div>
+    </footer>
+    <script src="indihome.js"></script>
+</body>
+</html>
